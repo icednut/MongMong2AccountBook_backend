@@ -1,4 +1,5 @@
 language: java
-script: gradlew check
+before_script: ./gradlew assemble
+script: ./gradlew check
 jdk:
   - oraclejdk8
