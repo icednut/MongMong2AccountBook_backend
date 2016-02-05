@@ -1,6 +1,18 @@
 language: java
+
 before_install:
  - chmod +x gradlew
+
 script: ./gradlew check
+
 jdk:
   - oraclejdk8
+
+deploy:
+  provider: codedeploy
+  access_key_id: AKIAJNUKSFSVMVLZUWLA
+  secret_access_key: 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
+  bucket: app
+  key: build/libs/accountbook-0.0.1-SNAPSHOT.jar
+  application: MongMong2AccountBook
+  deployment_group: dev
